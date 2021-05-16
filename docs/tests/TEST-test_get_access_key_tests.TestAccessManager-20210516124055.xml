@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test_get_access_key_tests.TestAccessManager-20210516124055" tests="1" file="test_get_access_key_tests.py" time="0.047" timestamp="2021-05-16T12:40:55" failures="1" errors="0" skipped="0">
+	<testcase classname="test_get_access_key_tests.TestAccessManager" name="test_parametrized_cases_tests" time="0.047" timestamp="2021-05-16T12:40:55">
+		<failure type="AssertionError" message="'access code is not correct for this DNI' != 'access code does not match'
+- access code is not correct for this DNI
++ access code does not match
+"><![CDATA[Traceback (most recent call last):
+  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
+    yield
+  File "C:\Python38\lib\unittest\case.py", line 676, in run
+    self._callTestMethod(testMethod)
+  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
+    method()
+  File "c:\users\aulavirtual\pycharmprojects\g81.t10.fp\src\unittest\python\test_get_access_key_tests.py", line 59, in test_parametrized_cases_tests
+    self.assertEqual(c_m.exception.message, row[ "EXPECTED RESULT" ])
+  File "C:\Python38\lib\unittest\case.py", line 912, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Python38\lib\unittest\case.py", line 1292, in assertMultiLineEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Python38\lib\unittest\case.py", line 753, in fail
+    raise self.failureException(msg)
+AssertionError: 'access code is not correct for this DNI' != 'access code does not match'
+- access code is not correct for this DNI
++ access code does not match
+
+]]></failure>
+	</testcase>
+</testsuite>
