@@ -27,7 +27,7 @@ class AccessKey():
         self.__type = self.TYPE_DS
         self.__access_code = AccessCode(access_code).value
         self.__dni = Dni(dni).value
-        access_request = AccessRequest.create_request_from_code(self.__access_code, self.__dni)
+        access_request = AccessRequest.create_request_from_code(self.__access_code)
         self.__notification_emails = EmailList(notification_emails).value
         validity = access_request.validity
         #justnow = datetime.utcnow()

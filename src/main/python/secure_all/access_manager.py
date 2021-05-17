@@ -10,11 +10,12 @@ class AccessManager:
     class __AccessManager:
         """Class for providing the methods for managing the access to a building"""
 
-        def request_access_code( self, id_card, name_surname, access_type, email_address, days ):
+        def request_access_code(self, id_card, name_surname, access_type, email_address, days):
             """ this method give access to the building"""
             my_request = AccessRequest(id_card, name_surname, access_type, email_address, days)
+            my_md5 = my_request.get_md5
             my_request.store_request()
-            return my_request.access_code
+            return my_md5
 
         def get_access_key( self, keyfile ):
             """Returns the access key for the access code & dni received in a json file"""
@@ -32,3 +33,4 @@ class AccessManager:
         if not AccessManager.__instance:
             AccessManager.__instance = AccessManager.__AccessManager()
         return AccessManager.__instance
+

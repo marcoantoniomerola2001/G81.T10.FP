@@ -35,11 +35,11 @@ class JsonStore():
         self._data_list.append(item.__dict__)
         self.save_store()
 
-    def find_item( self, key ):
+    def find_item(self, key):
         """find the value key in the _KEY_FIELD"""
         self.load_store()
         for item in self._data_list:
-            if item[self._ID_FIELD ] == key:
+            if item[self._ID_FIELD] == key:
                 return item
         return None
 
@@ -53,3 +53,5 @@ class JsonStore():
                 json.dump(self._data_list, file, indent=2)
         except FileNotFoundError as ex:
             raise AccessManagementException("Wrong file or file path") from ex
+
+
