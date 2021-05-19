@@ -28,25 +28,17 @@ class AccessManager:
             my_key.store_keys()
             return my_key.key
 
-        def open_door(self, keyfile):
+        def open_door(self, key):
             """Opens the door if the key is valid an it is not expired"""
-            try:
-                with open(keyfile, "r", encoding="utf-8", newline="") as json_file:
-                    data = json.load(json_file)
+            my_key = AccessKey.create_key_from_id(key)
+            is_valid = my_key.is_valid()
 
-            except FileNotFoundError as ex:
-                raise AccessManagementException("Wrong file or file path") from ex
-            except json.JSONDecodeError as ex:
-                raise AccessManagementException("JSON Decode Error - Wrong JSON Format") from ex
-            key =data['Key']
-            is_valid = AccessKey.create_key_from_id(key).is_valid()
             if is_valid:
                 storejson = OpenDoorJsonStore()
                 current_time = datetime.timestamp(datetime.utcnow())
                 item = AccessOpenDoor(key,current_time)
                 storejson.add_item(item)
-                return "Puerta abierta"
-            return "Puerta no abierta: llave invalida"
+                return True
 
     __instance = None
 

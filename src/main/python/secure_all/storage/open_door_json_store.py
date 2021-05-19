@@ -19,18 +19,6 @@ class OpenDoorJsonStore():
         _FILE_PATH = JSON_FILES_PATH + "storeOpenDoor.json"
         _ID_FIELD = ID_FIELD
 
-        def add_item(self, item):
-            """add item to the json"""
-            #pylint: disable=import-outside-toplevel,cyclic-import
-            from secure_all.data.access_open_door import AccessOpenDoor
-
-            if not isinstance(item, AccessOpenDoor):
-                raise AccessManagementException(self.INVALID_ITEM)
-            if not self.find_item(item.key) is None:
-                raise AccessManagementException(self.ID_ALREADY_STORED)
-
-            return super().add_item(item)
-
     __instance = None
 
     def __new__(cls):
