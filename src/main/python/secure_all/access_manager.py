@@ -2,6 +2,11 @@
 
 from secure_all.data.access_key import AccessKey
 from secure_all.data.access_request import AccessRequest
+from secure_all.storage.open_door_json_store import OpenDoorJsonStore
+from secure_all.data.access_open_door import AccessOpenDoor
+from secure_all.exception.access_management_exception import AccessManagementException
+from datetime import datetime
+import json
 
 
 class AccessManager:
@@ -23,10 +28,23 @@ class AccessManager:
             my_key.store_keys()
             return my_key.key
 
-        def open_door( self, key ):
+        def open_door(self, keyfile):
             """Opens the door if the key is valid an it is not expired"""
+            try:
+                with open(keyfile, "r", encoding="utf-8", newline="") as json_file:
+                    data = json.load(json_file)
+
+            except FileNotFoundError as ex:
+                raise AccessManagementException("Wrong file or file path") from ex
+            except json.JSONDecodeError as ex:
+                raise AccessManagementException("JSON Decode Error - Wrong JSON Format") from ex
+            key =data['Key']
             is_valid = AccessKey.create_key_from_id(key).is_valid()
             if is_valid:
+                storejson = OpenDoorJsonStore()
+                current_time = datetime.timestamp(datetime.utcnow())
+                item = AccessOpenDoor(key,current_time)
+                storejson.add_item(item)
                 return "Puerta abierta"
             return "Puerta no abierta: llave invalida"
 

@@ -25,3 +25,4 @@ INVALID;FP2 23;open_mutado_etiq_11.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP2 24;open_borrado_etiq_12.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP2 25;open_duplicado_etiq_12.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP2 26;open_mutado_etiq_12.json;JSON Decode Error - Wrong JSON Format
+VALID;FP2 27;open_correcto_2.json;Puerta abierta

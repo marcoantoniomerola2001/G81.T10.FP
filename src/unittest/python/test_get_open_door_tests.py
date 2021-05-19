@@ -3,7 +3,7 @@ import unittest
 import csv
 
 from secure_all import AccessManager, AccessManagementException, \
-    JSON_FILES_PATH, OpenDoorJsonStore
+    JSON_FILES_PATH, OpenDoorJsonStore, KeysJsonStore
 
 
 class TestAccessManager(unittest.TestCase):
@@ -17,15 +17,13 @@ class TestAccessManager(unittest.TestCase):
 
         opendoor_store = OpenDoorJsonStore()
         opendoor_store.empty_store()
-
+        """
         # introduce dos aperturas de puerta correcta, con dos claves distintas correctas
         my_manager = AccessManager()
-        print("one")
-        my_manager.open_door("657244bdf89f067462e6a7f12b44749340f61030619f93bee391fbaf93361627")
         print("two")
-        my_manager.open_door("de000a04f3a9b1d15b07e38b166f00f3fb1bf46533f32ac37156faf43e47f722")
+        my_manager.open_door(JSON_FILES_PATH + "open_correcto2.json")
         print("Finished init")
-
+        """
 
     def test_parametrized_cases_tests( self ):
         """Parametrized cases read from testingCases_FP2.csv"""
@@ -34,17 +32,18 @@ class TestAccessManager(unittest.TestCase):
             #pylint: disable=no-member
             param_test_cases = csv.DictReader(csvfile, delimiter=';')
             my_code = AccessManager()
-            keys_store = KeysJsonStore()
+            open_door_store = OpenDoorJsonStore()
             for row in param_test_cases:
                 file_name = JSON_FILES_PATH + row["FILE"]
                 print("Param:" + row[ 'ID TEST' ] + row["VALID INVALID"])
                 if row["VALID INVALID"] ==  "VALID":
-                    valor = my_code.get_access_key(file_name)
+                    valor = my_code.open_door(file_name)
                     self.assertEqual(row[ "EXPECTED RESULT" ], valor)
                     print("el valor: " + valor)
-                    generated_key = keys_store.find_item(valor)
+                    generated_key = open_door_store.find_item(valor)
                     print(generated_key)
                     self.assertIsNotNone(generated_key)
+
                 else:
                     with self.assertRaises(AccessManagementException) as c_m:
                         my_code.get_access_key(file_name)
