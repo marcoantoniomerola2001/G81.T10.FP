@@ -9,9 +9,6 @@ class OpenDoorJsonStore():
 
     class __OpenDoorJsonStore(JsonStore):
         # pylint: disable=invalid-name
-        INVALID_ITEM = "Invalid item to be stored as a request"
-        ID_ALREADY_STORED = "key already found in storeRequest"
-        NOT_FOUND_IN_THE_STORE = "key does not match"
 
         ID_FIELD = '_AccessOpenDoor__key'
         OPEN_DOOR__TIME = '_AccessOpenDoor__time'

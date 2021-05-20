@@ -1,14 +1,13 @@
 VALID INVALID;ID TEST;FILE;EXPECTED RESULT
-INVALID;FP3 1;empty.json;JSON Decode Error - Wrong JSON Format
-INVALID;FP3 2; duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 1;empty.json;Wrong file or file path
+INVALID;FP3 2; duplicado.json;Wrong file or file path
 INVALID;FP3 3;corchete_ini_borrado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 4;corchete_ini_duplicado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 5;corchete_ini_mutado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 6;corchete_fin_borrado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 7;corchete_fin_duplicado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 8;corchete_fin_mutado.json;JSON Decode Error - Wrong JSON Format
-INVALID;FP3 9;info_borrado.json;JSON Decode Error - Wrong JSON Format
-INVALID;FP3 10;info_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 9;info_borrado.json;JSON Decode Error - Wrong label
 INVALID;FP3 11;campo1_borrado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 12;campo1_duplicado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 13;coma_borrado.json;JSON Decode Error - Wrong JSON Format
@@ -28,21 +27,21 @@ INVALID;FP3 26;dato1_duplicado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 27;comilla1_borrado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 28;comilla1_duplicado.json;JSON Decode Error - Wrong JSON Format
 INVALID;FP3 29;comilla1_mutado.json;JSON Decode Error - Wrong JSON Format
-INVALID;FP3 30;clave1_borrado.json;JSON Decode Error - Wrong JSON Format******
-INVALID;FP3 31;clave1_duplicado.json;JSON Decode Error - Wrong JSON Format******
-INVALID;FP3 32;clave1_mutado.json;JSON Decode Error - Wrong JSON Format******
-INVALID;FP3 33;comilla1c_borrado.json;JSON Decode Error - Wrong JSON Format ****
-INVALID;FP3 34;comilla1c_duplicado.json;JSON Decode Error - Wrong JSON Format****
-INVALID;FP3 35;comilla1c_mutado.json;JSON Decode Error - Wrong JSON Format****
-INVALID;FP3 36;comilla_dato1_a_borrado.json;JSON Decode Error - Wrong JSON Format ****
-INVALID;FP3 37;comilla_dato1_a_duplicado.json;JSON Decode Error - Wrong JSON Format****
-INVALID;FP3 38;comilla_dato1_a_mutado.json;JSON Decode Error - Wrong JSON Format****
-INVALID;FP3 39;valor_dato1_borrado.json;JSON Decode Error - Wrong JSON Format ****
-INVALID;FP3 40;valor_dato1_duplicado.json;JSON Decode Error - Wrong JSON Format****
-INVALID;FP3 41;valor_dato1_mutado.json;JSON Decode Error - Wrong JSON Format****
-INVALID;FP3 42;comilla_dato1_c_borrado.json;JSON Decode Error - Wrong JSON Format ****
-INVALID;FP3 43;comilla_dato1_c_duplicado.json;JSON Decode Error - Wrong JSON Format****
-INVALID;FP3 44;comilla_dato1_c_mutado.json;JSON Decode Error - Wrong JSON Format****
+INVALID;FP3 30;clave1_borrado.json;JSON Decode Error - Wrong label
+INVALID;FP3 31;clave1_duplicado.json;JSON Decode Error - Wrong label
+INVALID;FP3 32;clave1_mutado.json;JSON Decode Error - Wrong label
+INVALID;FP3 33;comilla1c_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 34;comilla1c_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 35;comilla1c_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 36;comilla_dato1_a_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 37;comilla_dato1_a_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 38;comilla_dato1_a_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 39;valor_dato1_borrado.json;key invalid
+INVALID;FP3 40;valor_dato1_duplicado.json;key invalid
+INVALID;FP3 41;valor_dato1_mutado.json;key invalid
+INVALID;FP3 42;comilla_dato1_c_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 43;comilla_dato1_c_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 44;comilla_dato1_c_mutado.json;JSON Decode Error - Wrong JSON Format
 
 
 

@@ -3,8 +3,9 @@
 from secure_all.data.access_key import AccessKey
 from secure_all.data.access_request import AccessRequest
 from secure_all.storage.open_door_json_store import OpenDoorJsonStore
+from secure_all.storage.revoke_key_json_store import RevokeKeyJsonStore
 from secure_all.data.access_open_door import AccessOpenDoor
-from secure_all.exception.access_management_exception import AccessManagementException
+from secure_all.data.access_revoke_key import AccessRevokeKey
 from datetime import datetime
 import json
 
@@ -22,7 +23,7 @@ class AccessManager:
             my_request.store_request()
             return my_md5
 
-        def get_access_key( self, keyfile ):
+        def get_access_key( self, keyfile):
             """Returns the access key for the access code & dni received in a json file"""
             my_key = AccessKey.create_key_from_file(keyfile)
             my_key.store_keys()
@@ -40,10 +41,21 @@ class AccessManager:
                 storejson.add_item(item)
                 return True
 
+        def revoke_key( self, FilePath):
+            """Returns the emails of a key deactivated"""
+            my_revoke_key = AccessRevokeKey.create_revoke_key_from_file(FilePath)
+            key = my_revoke_key.key
+            my_key = AccessKey.create_key_from_id(key)
+            is_valid = my_key.is_valid()
+
+            if is_valid:
+                revoke_keys_store = RevokeKeyJsonStore()
+                revoke_keys_store.add_item(my_revoke_key)
+            return my_key.notification_emails
+
     __instance = None
 
     def __new__( cls ):
         if not AccessManager.__instance:
             AccessManager.__instance = AccessManager.__AccessManager()
         return AccessManager.__instance
-

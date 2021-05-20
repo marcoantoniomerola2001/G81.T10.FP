@@ -1,0 +1,12 @@
+[
+  {
+    "_AccessRevokeKey__key": "de000a04f3a9b1d15b07e38b166f00f3fb1bf46533f32ac37156faf43e47f722",
+    "_AccessRevokeKey__revocation": "Final",
+    "_AccessRevokeKey__reason": "adrianmarcoadrianmarcoadrianmarcoadrianmarcoadrianmarcoadrianmarcoadrianmarcoadrianmarcoadrianmarco"
+  },
+  {
+    "_AccessRevokeKey__key": "657244bdf89f067462e6a7f12b44749340f61030619f93bee391fbaf93361627",
+    "_AccessRevokeKey__revocation": "Temporal",
+    "_AccessRevokeKey__reason": "Por dejar pasar a una persona sin autorizacion"
+  }
+]
