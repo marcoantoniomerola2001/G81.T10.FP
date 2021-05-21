@@ -1,0 +1,61 @@
+VALID INVALID;ID TEST;FILE;EXPECTED RESULT
+INVALID;FP3 1;empty.json;Wrong file or file path
+INVALID;FP3 2; duplicado.json;Wrong file or file path
+INVALID;FP3 3;corchete_ini_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 4;corchete_ini_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 5;corchete_ini_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 6;corchete_fin_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 7;corchete_fin_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 8;corchete_fin_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 9;info_borrado.json;JSON Decode Error - Wrong label
+INVALID;FP3 11;campo1_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 12;campo1_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 13;coma_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 14;coma_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 15;coma_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 16;campo2_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 17;campo2_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 18;campo3_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 19;campo3_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 20;etiqueta1_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 21;etiqueta1_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 22;puntos_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 23;puntos_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 24;puntos_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 25;dato1_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 26;dato1_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 27;comilla1_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 28;comilla1_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 29;comilla1_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 30;clave1_borrado.json;JSON Decode Error - Wrong label
+INVALID;FP3 31;clave1_duplicado.json;JSON Decode Error - Wrong label
+INVALID;FP3 32;clave1_mutado.json;JSON Decode Error - Wrong label
+INVALID;FP3 33;comilla1c_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 34;comilla1c_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 35;comilla1c_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 36;comilla_dato1_a_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 37;comilla_dato1_a_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 38;comilla_dato1_a_mutado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 39;valor_dato1_borrado.json;key invalid
+INVALID;FP3 40;valor_dato1_duplicado.json;key invalid
+INVALID;FP3 41;valor_dato1_mutado.json;key invalid
+INVALID;FP3 42;comilla_dato1_c_borrado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 43;comilla_dato1_c_duplicado.json;JSON Decode Error - Wrong JSON Format
+INVALID;FP3 44;comilla_dato1_c_mutado.json;JSON Decode Error - Wrong JSON Format
+;;;
+INVALID;FP2 1;test_open_door_bad_key_regex (test_open_door_tests.py);key invalid
+VALID;FP2 2;test_open_door_good (test_open_door_tests.py);True
+VALID;FP2 3;test_open_door_resident (test_open_door_tests.py);True
+INVALID;FP2 4;test_open_door_bad_key_is_not_found (test_open_door_tests.py);key is not found or is expired
+INVALID;FP2 5;test_open_door_bad_key_is_expired (test_open_door_tests.py);key is not found or is expired
+;;;
+;;;
+VALID;FP 3 45;caso_correcto_1_f3.json;"[""mail1@uc3m.es"", ""mail2@uc3m.es""]"
+VALID;FP 3 46;caso_correcto_2_f3.json;"[""mail1@uc3m.es"", ""mail2@uc3m.es""]"
+VALID;FP 3 47;caso_correcto_3_f3.json;"[""mail1@uc3m.es"", ""mail2@uc3m.es""]"
+VALID;FP 3 48;caso_correcto_4_f3.json;"[""mail1@uc3m.es"", ""mail2@uc3m.es""]"
+INVALID;FP 3 49;caso_incorrecto_1_f3.json;revocation invalid
+INVALID;FP 3 50;caso_incorrecto_2_f3.json;reason invalid
+INVALID;FP 3 51;caso_incorrecto_3_f3.json;key invalid
+INVALID;FP 3 52;caso_incorrecto_4_f3.json;key is not found or is expired
+INVALID;FP 3 53;caso_incorrecto_5_f3.json;key was previously revoked by this method
