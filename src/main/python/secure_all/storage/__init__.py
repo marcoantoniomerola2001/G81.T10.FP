@@ -1,1 +1,1 @@
-"""Preparing the inports of the stores"""
+"""Preparing the imports of the stores"""

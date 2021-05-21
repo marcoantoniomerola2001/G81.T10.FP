@@ -7,11 +7,12 @@ from secure_all import AccessManager, AccessManagementException, \
 
 class TestAccessManager(unittest.TestCase):
     """test class for open_door"""
+
     # pylint: disable=no-member
 
     @classmethod
     def setUpClass(cls) -> None:
-        # first af all, i introduce all value tha I need for the estructural testing
+        # first af all, i introduce all value tha I need for the structural testing
         # remove the old storeKeys
         requests_store = RequestJsonStore()
         keys_store = KeysJsonStore()
@@ -22,22 +23,22 @@ class TestAccessManager(unittest.TestCase):
         # introduce a key valid and not expired and guest
         my_manager = AccessManager()
         my_manager.request_access_code("05270358T", "Pedro Martin",
-                                               "Resident", "uc3m@gmail.com", 0)
+                                       "Resident", "uc3m@gmail.com", 0)
 
         my_manager.request_access_code("53935158C", "Marta Lopez",
-                                               "Guest", "uc3m@gmail.com", 5)
+                                       "Guest", "uc3m@gmail.com", 5)
 
-        my_manager.get_access_key(JSON_FILES_PATH  + "key_ok.json")
+        my_manager.get_access_key(JSON_FILES_PATH + "key_ok.json")
 
         # introduce a key valid and expiration date = 0 , resident
-        my_manager.get_access_key(JSON_FILES_PATH  + "key_ok3_resident.json")
+        my_manager.get_access_key(JSON_FILES_PATH + "key_ok3_resident.json")
 
-        # introduce a key expirated, I need to change expiration date before to store the key
+        # introduce a key expire, I need to change expiration date before to store the key
         my_manager.request_access_code("68026939T", "Juan Perez",
                                        "Guest", "expired@gmail.com", 2)
         # expected result 383a8eb306459919ef0dc819405f16a6
         # We generate the AccessKey for this AccessRequest
-        my_key_expirated = AccessKey.create_key_from_file(JSON_FILES_PATH  +
+        my_key_expirated = AccessKey.create_key_from_file(JSON_FILES_PATH +
                                                           "key_ok_testing_expired.json")
         # We manipulate the expiration date to obtain an expired AccessKey
         my_key_expirated.expiration_date = 0
@@ -77,6 +78,7 @@ class TestAccessManager(unittest.TestCase):
             my_key.open_door("459063166d5a8e38ac493d4f523e31cca39bdc2c523d12dc08cae4a983224495")
 
         self.assertEqual("key is not found or is expired", c_m.exception.message)
+
 
 if __name__ == '__main__':
     unittest.main()

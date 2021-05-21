@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test_get_access_revoke_key_tests.TestAccessManager-20210521154719" tests="10" file="test_get_access_revoke_key_tests.py" time="0.047" timestamp="2021-05-21T15:47:19" failures="0" errors="0" skipped="0">
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_parametrized_cases_tests" time="0.031" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_ok_1" time="0.000" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_ok_2" time="0.016" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_ok_3" time="0.000" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_ok_4" time="0.000" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_wrong_1" time="0.000" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_wrong_2" time="0.000" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_wrong_3" time="0.000" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_wrong_4" time="0.000" timestamp="2021-05-21T15:47:19"/>
+	<testcase classname="test_get_access_revoke_key_tests.TestAccessManager" name="test_revoke_key_wrong_5" time="0.000" timestamp="2021-05-21T15:47:19"/>
+</testsuite>

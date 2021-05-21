@@ -4,6 +4,7 @@ from secure_all.data.attributes.attribute_revocation import Revocation
 from secure_all.data.attributes.attribute_reason import Reason
 from secure_all.storage.revoke_key_json_store import RevokeKeyJsonStore
 
+
 class AccessRevokeKey:
 
     def __init__(self, key, revocation, reason):
@@ -12,28 +13,31 @@ class AccessRevokeKey:
         self.__reason = Reason(reason).value
 
     @property
-    def key( self ):
+    def key(self):
         """getter key"""
         return self.__key
+
     @key.setter
     def key(self, value):
         """setter key"""
         self.__key = value
 
     @property
-    def revocation( self ):
+    def revocation(self):
         """getter revocation"""
         return self.__revocation
+
     @revocation.setter
     def revocation(self, value):
         """setter key"""
         self.__revocation = value
 
     @property
-    def reason( self ):
+    def reason(self):
         """getter reason"""
         return self.__reason
-    @revocation.setter
+
+    @reason.setter
     def reason(self, value):
         """setter reason"""
         self.__reason = value
@@ -52,4 +56,3 @@ class AccessRevokeKey:
 
         revoke_key_store = RevokeKeyJsonStore()
         revoke_key_store.add_item(self)
-
