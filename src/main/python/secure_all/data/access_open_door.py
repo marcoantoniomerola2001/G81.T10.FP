@@ -28,5 +28,5 @@ class AccessOpenDoor:
 
     def store_open_door(self):
         """Storing open door"""
-        storejson = OpenDoorJsonStore()
-        storejson.add_item(self)
+        open_door_store = OpenDoorJsonStore()
+        open_door_store.add_item(self)

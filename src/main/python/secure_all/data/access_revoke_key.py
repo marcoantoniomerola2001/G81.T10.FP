@@ -50,6 +50,6 @@ class AccessRevokeKey:
     def store_revoke_key(self):
         """Storing revoke key"""
 
-        storejson = RevokeKeyJsonStore()
-        storejson.add_item(self)
+        revoke_key_store = RevokeKeyJsonStore()
+        revoke_key_store.add_item(self)
 

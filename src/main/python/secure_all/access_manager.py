@@ -34,18 +34,18 @@ class AccessManager:
             my_key = AccessKey.create_key_from_id(key)
 
             if my_key.is_valid():
-                item = AccessOpenDoor(key)
-                item.store_open_door()
+                my_open_door = AccessOpenDoor(key)
+                my_open_door.store_open_door()
                 return True
 
-        def revoke_key( self, FilePath):
+        def revoke_key( self, revokekeyfile):
             """Returns the emails of a key deactivated"""
-            item = AccessRevokeKey.create_revoke_key_from_file(FilePath)
-            key = item.key
+            my_revoke_key = AccessRevokeKey.create_revoke_key_from_file(revokekeyfile)
+            key = my_revoke_key.key
             my_key = AccessKey.create_key_from_id(key)
 
             if my_key.is_valid():
-                item.store_revoke_key()
+                my_revoke_key.store_revoke_key()
 
             return my_key.notification_emails
 
