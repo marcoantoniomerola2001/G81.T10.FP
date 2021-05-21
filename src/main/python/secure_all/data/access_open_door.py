@@ -1,10 +1,12 @@
 
+from datetime import datetime
+from secure_all.storage.open_door_json_store import OpenDoorJsonStore
 
 class AccessOpenDoor:
 
-    def __init__(self, key, time):
+    def __init__(self, key):
         self.__key = key
-        self.__time = time
+        self.__time = datetime.timestamp(datetime.utcnow())
 
     @property
     def key( self ):
@@ -23,3 +25,8 @@ class AccessOpenDoor:
     def time(self, value):
         """setter key"""
         self.__time = value
+
+    def store_open_door(self):
+        """Storing open door"""
+        storejson = OpenDoorJsonStore()
+        storejson.add_item(self)

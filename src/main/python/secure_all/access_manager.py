@@ -6,7 +6,7 @@ from secure_all.storage.open_door_json_store import OpenDoorJsonStore
 from secure_all.storage.revoke_key_json_store import RevokeKeyJsonStore
 from secure_all.data.access_open_door import AccessOpenDoor
 from secure_all.data.access_revoke_key import AccessRevokeKey
-from datetime import datetime
+
 import json
 
 
@@ -32,13 +32,10 @@ class AccessManager:
         def open_door(self, key):
             """Opens the door if the key is valid an it is not expired"""
             my_key = AccessKey.create_key_from_id(key)
-            is_valid = my_key.is_valid()
 
-            if is_valid:
-                storejson = OpenDoorJsonStore()
-                current_time = datetime.timestamp(datetime.utcnow())
-                item = AccessOpenDoor(key,current_time)
-                storejson.add_item(item)
+            if my_key.is_valid():
+                item = AccessOpenDoor(key)
+                item.store_open_door()
                 return True
 
         def revoke_key( self, FilePath):
