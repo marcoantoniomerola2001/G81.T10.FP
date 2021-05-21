@@ -12,6 +12,8 @@ class RevokeKeyJsonStore():
         ID_FIELD = '_AccessRevokeKey__key'
         REVOKE_KEY__REVOCATION = '_AccessRevokeKey__revocation'
         REVOKE_KEY__REASON = '_AccessRevokeKey__reason'
+        INVALID_ITEM = "invalid item to be stored as a revoke_key"
+        KEY_ALREADY_REVOKED = "key was previously revoked by this method"
 
         _FILE_PATH = JSON_FILES_PATH + "storeRevokeKeys.json"
         _ID_FIELD = ID_FIELD
@@ -22,10 +24,10 @@ class RevokeKeyJsonStore():
             from secure_all.data.access_revoke_key import AccessRevokeKey
 
             if not isinstance(item,AccessRevokeKey):
-                raise AccessManagementException("invalid item to be stored as a revoke_key")
+                raise AccessManagementException(self.INVALID_ITEM)
 
             if not self.find_item(item.key) is None:
-                raise AccessManagementException("key was previously revoked by this method")
+                raise AccessManagementException(self.KEY_ALREADY_REVOKED)
 
             return super().add_item(item)
 

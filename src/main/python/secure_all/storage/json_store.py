@@ -6,6 +6,8 @@ class JsonStore():
     """Managest stores based on JsonFiles"""
     _FILE_PATH = ""
     _ID_FIELD = ""
+    ERROR_FORMAT = "JSON Decode Error - Wrong JSON Format"
+    WRONG_PATH = "Wrong file or file path"
 
     def __init__(self):
         self._data_list = []
@@ -25,7 +27,7 @@ class JsonStore():
         except FileNotFoundError as ex:
             self._data_list = []
         except json.JSONDecodeError as ex:
-            raise AccessManagementException("JSON Decode Error - Wrong JSON Format") from ex
+            raise AccessManagementException(self.ERROR_FORMAT) from ex
 
     def add_item( self, item ):
         """Adds a new element to the list and saves the file
@@ -52,6 +54,6 @@ class JsonStore():
             with open(self._FILE_PATH, "w", encoding="utf-8", newline="") as file:
                 json.dump(self._data_list, file, indent=2)
         except FileNotFoundError as ex:
-            raise AccessManagementException("Wrong file or file path") from ex
+            raise AccessManagementException(self.WRONG_PATH) from ex
 
 
