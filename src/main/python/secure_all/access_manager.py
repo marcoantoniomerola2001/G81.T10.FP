@@ -40,14 +40,13 @@ class AccessManager:
 
         def revoke_key( self, FilePath):
             """Returns the emails of a key deactivated"""
-            my_revoke_key = AccessRevokeKey.create_revoke_key_from_file(FilePath)
-            key = my_revoke_key.key
+            item = AccessRevokeKey.create_revoke_key_from_file(FilePath)
+            key = item.key
             my_key = AccessKey.create_key_from_id(key)
-            is_valid = my_key.is_valid()
 
-            if is_valid:
-                revoke_keys_store = RevokeKeyJsonStore()
-                revoke_keys_store.add_item(my_revoke_key)
+            if my_key.is_valid():
+                item.store_revoke_key()
+
             return my_key.notification_emails
 
     __instance = None

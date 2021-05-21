@@ -2,6 +2,7 @@ from secure_all.parser.revoke_key_json_parser import RevokeKeyJsonParser
 from secure_all.data.attributes.attribute_key import Key
 from secure_all.data.attributes.attribute_revocation import Revocation
 from secure_all.data.attributes.attribute_reason import Reason
+from secure_all.storage.revoke_key_json_store import RevokeKeyJsonStore
 
 class AccessRevokeKey:
 
@@ -45,3 +46,10 @@ class AccessRevokeKey:
         return cls(access_revoke_key_items[RevokeKeyJsonParser.KEY],
                    access_revoke_key_items[RevokeKeyJsonParser.REVOCATION],
                    access_revoke_key_items[RevokeKeyJsonParser.REASON])
+
+    def store_revoke_key(self):
+        """Storing revoke key"""
+
+        storejson = RevokeKeyJsonStore()
+        storejson.add_item(self)
+
