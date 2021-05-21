@@ -10,5 +10,3 @@ from .storage.keys_json_store import KeysJsonStore
 from .storage.requests_json_store import RequestJsonStore
 from .storage.open_door_json_store import OpenDoorJsonStore
 from .storage.revoke_key_json_store import RevokeKeyJsonStore
-
-

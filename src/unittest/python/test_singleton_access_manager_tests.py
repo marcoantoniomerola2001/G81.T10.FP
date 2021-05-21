@@ -2,7 +2,8 @@
 
 import unittest
 
-from secure_all import AccessManager, KeysJsonStore, RequestJsonStore, OpenDoorJsonStore, RevokeKeyJsonStore
+from secure_all import AccessManager, KeysJsonStore, \
+    RequestJsonStore, OpenDoorJsonStore, RevokeKeyJsonStore
 from secure_all.data.attributes.attribute_dni import Dni
 
 

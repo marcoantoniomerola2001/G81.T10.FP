@@ -1,8 +1,10 @@
+"""imports"""
 from datetime import datetime
 from secure_all.storage.open_door_json_store import OpenDoorJsonStore
 
 
 class AccessOpenDoor:
+    """class for AcessOpenDoor"""
 
     def __init__(self, key):
         self.__key = key

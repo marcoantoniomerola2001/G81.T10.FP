@@ -11,25 +11,28 @@ class TestAccessManager(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        """"""
+        """set up class"""
         # pylint: disable=no-member
         revoke_key_store = RevokeKeyJsonStore()
         revoke_key_store.empty_store()
 
     def test_revoke_key_ok_1(self):
         """Correct Case: Revocation Temporal"""
+        # pylint: disable=no-member
         my_manager = AccessManager()
         result = my_manager.revoke_key(JSON_FILES_PATH + "caso_correcto_1_f3.json")
         self.assertEqual(["mail1@uc3m.es", "mail2@uc3m.es"], result)
 
     def test_revoke_key_ok_2(self):
         """Correct Case: Revocation Final"""
+        # pylint: disable=no-member
         my_manager = AccessManager()
         result = my_manager.revoke_key(JSON_FILES_PATH + "caso_correcto_2_f3.json")
         self.assertEqual(["mail1@uc3m.es", "mail2@uc3m.es"], result)
 
     def test_revoke_key_ok_3(self):
         """Correct Case: Reason 100 characters"""
+        # pylint: disable=no-member
         revoke_key_store = RevokeKeyJsonStore()
         revoke_key_store.empty_store()
         my_manager = AccessManager()
@@ -38,6 +41,7 @@ class TestAccessManager(unittest.TestCase):
 
     def test_revoke_key_ok_4(self):
         """Correct Case: Reason 99 characters"""
+        # pylint: disable=no-member
         revoke_key_store = RevokeKeyJsonStore()
         revoke_key_store.empty_store()
         my_manager = AccessManager()
@@ -46,6 +50,7 @@ class TestAccessManager(unittest.TestCase):
 
     def test_revoke_key_wrong_1(self):
         """Wrong Case: Revocation Hola"""
+        # pylint: disable=no-member
         my_manager = AccessManager()
         with self.assertRaises(AccessManagementException) as c_m:
             my_manager.revoke_key(JSON_FILES_PATH + "caso_incorrecto_1_f3.json")
@@ -53,6 +58,7 @@ class TestAccessManager(unittest.TestCase):
 
     def test_revoke_key_wrong_2(self):
         """Wrong Case: Revocation 101 characters"""
+        # pylint: disable=no-member
         my_manager = AccessManager()
         with self.assertRaises(AccessManagementException) as c_m:
             my_manager.revoke_key(JSON_FILES_PATH + "caso_incorrecto_2_f3.json")
@@ -60,6 +66,7 @@ class TestAccessManager(unittest.TestCase):
 
     def test_revoke_key_wrong_3(self):
         """Wrong Case: Key 63 characters"""
+        # pylint: disable=no-member
         my_manager = AccessManager()
         with self.assertRaises(AccessManagementException) as c_m:
             my_manager.revoke_key(JSON_FILES_PATH + "caso_incorrecto_3_f3.json")
@@ -67,6 +74,7 @@ class TestAccessManager(unittest.TestCase):
 
     def test_revoke_key_wrong_4(self):
         """Wrong Case: Key no exist"""
+        # pylint: disable=no-member
         my_manager = AccessManager()
         with self.assertRaises(AccessManagementException) as c_m:
             my_manager.revoke_key(JSON_FILES_PATH + "caso_incorrecto_4_f3.json")
@@ -74,6 +82,7 @@ class TestAccessManager(unittest.TestCase):
 
     def test_revoke_key_wrong_5(self):
         """Wrong Case: Key no exist"""
+        # pylint: disable=no-member
         my_manager = AccessManager()
         my_manager.revoke_key(JSON_FILES_PATH + "caso_correcto_1_f3.json")
         with self.assertRaises(AccessManagementException) as c_m:

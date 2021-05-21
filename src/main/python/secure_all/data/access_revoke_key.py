@@ -1,3 +1,4 @@
+"""imports"""
 from secure_all.parser.revoke_key_json_parser import RevokeKeyJsonParser
 from secure_all.data.attributes.attribute_key import Key
 from secure_all.data.attributes.attribute_revocation import Revocation
@@ -6,7 +7,7 @@ from secure_all.storage.revoke_key_json_store import RevokeKeyJsonStore
 
 
 class AccessRevokeKey:
-
+    """"class for AcessRevokeKey"""
     def __init__(self, key, revocation, reason):
         self.__key = Key(key).value
         self.__revocation = Revocation(revocation).value

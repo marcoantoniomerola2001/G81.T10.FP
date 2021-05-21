@@ -37,6 +37,7 @@ class AccessManager:
                 my_open_door = AccessOpenDoor(key)
                 my_open_door.store_open_door()
                 return True
+            return False
 
         @staticmethod
         def revoke_key(revoke_key_file):
